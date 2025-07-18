@@ -1,0 +1,234 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="de">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>STACKS - Deine Website</title>\
+    <style>\
+        /* Grundlegende Stile */\
+        body \{\
+            font-family: Arial, sans-serif;\
+            margin: 0;\
+            padding: 0;\
+            background-color: #f0f0f0; /* Heller Hintergrund */\
+            color: #333;\
+            display: flex;\
+            flex-direction: column;\
+            min-height: 100vh; /* Mindesth\'f6he des Bodys f\'fcr Footer am unteren Rand */\
+        \}\
+\
+        .header \{\
+            background-color: #FF4500; /* Orange Ton */\
+            color: white;\
+            text-align: center;\
+            padding: 50px 20px;\
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\
+            position: relative; /* F\'fcr die Positionierung des Kreises */\
+            overflow: hidden; /* F\'fcr den Kreis-Effekt */\
+        \}\
+\
+        .header h1 \{\
+            font-family: Impact, sans-serif; /* \'c4hnlich wie im Bild */\
+            font-size: 8vw; /* Responsive Schriftgr\'f6\'dfe */\
+            margin: 0;\
+            line-height: 1;\
+            text-transform: uppercase;\
+            position: relative; /* Um \'fcber dem Pseudo-Element zu liegen */\
+            z-index: 2; /* \'dcber dem Kreis */\
+        \}\
+\
+        /* Navigationsbereich mit Buttons */\
+        .navigation \{\
+            text-align: center;\
+            padding: 40px 20px;\
+            background-color: #ffffff; /* Wei\'dfer Hintergrund f\'fcr Buttons */\
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);\
+            display: flex;\
+            justify-content: center; /* Zentriert die Buttons */\
+            flex-wrap: wrap; /* Buttons umbrechen, wenn der Platz nicht ausreicht */\
+            gap: 30px; /* Abstand zwischen den Buttons */\
+        \}\
+\
+        .nav-button \{\
+            width: 180px; /* Durchmesser des Kreises */\
+            height: 180px; /* Durchmesser des Kreises */\
+            background-color: #FF4500; /* Oranger Button-Hintergrund */\
+            border-radius: 50%; /* Macht den Button kreisf\'f6rmig */\
+            display: flex;\
+            justify-content: center;\
+            align-items: center;\
+            color: white;\
+            font-size: 1.5em;\
+            font-weight: bold;\
+            text-decoration: none; /* Entfernt die Unterstreichung bei Links */\
+            cursor: pointer;\
+            transition: background-color 0.3s ease, transform 0.3s ease;\
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);\
+            text-align: center;\
+            padding: 10px; /* Innenabstand f\'fcr Text */\
+            box-sizing: border-box; /* Padding und Border werden in die Gr\'f6\'dfe einbezogen */\
+        \}\
+\
+        .nav-button:hover \{\
+            background-color: #E63900; /* Etwas dunkleres Orange beim Hover */\
+            transform: translateY(-5px); /* Leichter Hoch-Effekt */\
+        \}\
+\
+        /* Inhaltsbereiche */\
+        .content-section \{\
+            display: none; /* Standardm\'e4\'dfig ausgeblendet */\
+            padding: 40px 20px;\
+            max-width: 900px;\
+            margin: 40px auto;\
+            background-color: #ffffff;\
+            border-radius: 8px;\
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);\
+            line-height: 1.8;\
+        \}\
+\
+        .content-section h2 \{\
+            color: #FF4500;\
+            font-size: 2.2em;\
+            margin-bottom: 25px;\
+            border-bottom: 2px solid #FF4500;\
+            padding-bottom: 10px;\
+        \}\
+\
+        .content-section p \{\
+            margin-bottom: 1em;\
+        \}\
+\
+        /* Footer */\
+        .footer \{\
+            margin-top: auto; /* Sorgt daf\'fcr, dass der Footer immer unten ist */\
+            background-color: #333;\
+            color: white;\
+            text-align: center;\
+            padding: 20px;\
+            font-size: 0.9em;\
+        \}\
+\
+        /* Responsive Anpassungen */\
+        @media (max-width: 768px) \{\
+            .header h1 \{\
+                font-size: 12vw; /* Gr\'f6\'dfer auf kleineren Bildschirmen */\
+            \}\
+            .navigation \{\
+                flex-direction: column; /* Buttons untereinander auf kleinen Bildschirmen */\
+                align-items: center;\
+                gap: 20px;\
+            \}\
+            .nav-button \{\
+                width: 150px;\
+                height: 150px;\
+                font-size: 1.3em;\
+            \}\
+            .content-section \{\
+                padding: 25px 15px;\
+                margin: 20px auto;\
+            \}\
+        \}\
+    </style>\
+</head>\
+<body>\
+\
+    <div class="header">\
+        <h1>STACKS</h1>\
+    </div>\
+\
+    <div class="navigation">\
+        <div class="nav-button" onclick="showContent('impressum')">Impressum</div>\
+        <div class="nav-button" onclick="showContent('kurse')">Kurse</div>\
+        <div class="nav-button" onclick="showContent('ueberuns')">\'dcber uns</div>\
+    </div>\
+\
+    <div id="impressum-content" class="content-section">\
+        <h2>Impressum</h2>\
+        <p><strong>Platzhalter f\'fcr dein Impressum:</strong></p>\
+        <p>Hier muss laut Gesetz folgendes stehen:</p>\
+        <ul>\
+            <li>Dein Name / Firmenname</li>\
+            <li>Deine Adresse</li>\
+            <li>Kontaktm\'f6glichkeiten (E-Mail, Telefon)</li>\
+            <li>Ggf. Handelsregisternummer, Umsatzsteuer-ID etc.</li>\
+            <li>Verantwortlich f\'fcr den Inhalt nach \'a7 55 Abs. 2 RStV (falls zutreffend)</li>\
+        </ul>\
+        <p>Bitte nutze einen Online-Impressumsgenerator, um sicherzustellen, dass dein Impressum vollst\'e4ndig und rechtlich korrekt ist (z.B. <a href="https://www.e-recht24.de/impressum-generator" target="_blank">e-recht24.de/impressum-generator</a>).</p>\
+        <p>Zudem ben\'f6tigst du eine **Datenschutzerkl\'e4rung**.</p>\
+        <p><strong>Platzhalter f\'fcr Datenschutzerkl\'e4rung:</strong></p>\
+        <p>Auch hierf\'fcr gibt es Generatoren (z.B. <a href="https://www.e-recht24.de/datenschutzerklaerung-generator" target="_blank">e-recht24.de/datenschutzerklaerung-generator</a> oder <a href="https://www.datenschutz-generator.de/" target="_blank">datenschutz-generator.de</a>).</p>\
+        <p>Denke daran, diese Seiten zu aktualisieren, sobald du die richtigen Informationen hast.</p>\
+    </div>\
+\
+    <div id="kurse-content" class="content-section">\
+        <h2>Unsere Kurse</h2>\
+        <p><strong>Platzhalter f\'fcr deine Kursinhalte:</strong></p>\
+        <p>Hier kannst du eine \'dcbersicht deiner Kurse einf\'fcgen. Zum Beispiel:</p>\
+        <h3>Kurs 1: Einf\'fchrung in [Thema]</h3>\
+        <p>Beschreibung des Kurses, Lernziele, Dauer, Zielgruppe, Preis. F\'fcge hier Details hinzu.</p>\
+        <ul>\
+            <li>Lektion 1: [Titel]</li>\
+            <li>Lektion 2: [Titel]</li>\
+            <li>...</li>\
+        </ul>\
+        <p><strong>Dozent:</strong> [Name des Dozenten]</p>\
+        <p><strong>N\'e4chster Starttermin:</strong> [Datum]</p>\
+\
+        <h3>Kurs 2: Fortgeschrittene Techniken in [anderes Thema]</h3>\
+        <p>Detaillierte Beschreibung dieses Kurses, Voraussetzungen, was die Teilnehmer lernen werden.</p>\
+        <p><strong>Dozent:</strong> [Name des Dozenten]</p>\
+        <p><strong>N\'e4chster Starttermin:</strong> [Datum]</p>\
+\
+        <p>F\'fcge weitere Kurse oder ein Kontaktformular f\'fcr Anfragen hinzu.</p>\
+    </div>\
+\
+    <div id="ueberuns-content" class="content-section">\
+        <h2>\'dcber uns</h2>\
+        <p><strong>Platzhalter f\'fcr Informationen \'fcber STACKS:</strong></p>\
+        <p>Hier kannst du die Geschichte von STACKS erz\'e4hlen, eure Mission, Vision und Werte.</p>\
+        <h3>Unsere Mission</h3>\
+        <p>Was m\'f6chtet ihr erreichen? Welchen Nutzen bietet ihr euren Kunden oder der Community?</p>\
+        <p><em>Beispiel:</em> "Bei STACKS ist es unsere Mission, Menschen dabei zu unterst\'fctzen, [F\'e4higkeit/Wissen] zu erlernen und ihre Potenziale voll auszusch\'f6pfen. Wir glauben an [Wert wie z.B. lebenslanges Lernen, praktische Anwendung, Gemeinschaft]."</p>\
+\
+        <h3>Unser Team / Unsere Philosophie</h3>\
+        <p>Stell dich oder dein Team vor. Was macht euch besonders? Welche Philosophie steckt hinter STACKS?</p>\
+        <p><em>Beispiel:</em> "Hinter STACKS steht ein engagiertes Team von Experten, die sich leidenschaftlich f\'fcr [Thema] einsetzen. Wir legen Wert auf [z.B. praxisnahe Inhalte, individuelle Betreuung, innovative Lehrmethoden]..."</p>\
+\
+        <h3>Warum STACKS?</h3>\
+        <p>Fasse zusammen, warum jemand STACKS w\'e4hlen sollte.</p>\
+        <p><em>Beispiel:</em> "W\'e4hle STACKS, wenn du Wert auf [Vorteil 1], [Vorteil 2] und [Vorteil 3] legst. Wir sind dein Partner f\'fcr [Bereich]."</p>\
+    </div>\
+\
+    <div class="footer">\
+        <p>&copy; 2025 STACKS. Alle Rechte vorbehalten.</p>\
+        <p>Powered by GitHub Pages</p>\
+    </div>\
+\
+    <script>\
+        // JavaScript-Funktion zum Anzeigen/Ausblenden der Inhalte\
+        function showContent(sectionId) \{\
+            // Alle Inhaltsbereiche ausblenden\
+            const allSections = document.querySelectorAll('.content-section');\
+            allSections.forEach(section => \{\
+                section.style.display = 'none';\
+            \});\
+\
+            // Den gew\'fcnschten Inhaltsbereich anzeigen\
+            const targetSection = document.getElementById(sectionId + '-content');\
+            if (targetSection) \{\
+                targetSection.style.display = 'block';\
+                // Optional: Zum angezeigten Bereich scrollen\
+                targetSection.scrollIntoView(\{ behavior: 'smooth', block: 'start' \});\
+            \}\
+        \}\
+    </script>\
+\
+</body>\
+</html>}
